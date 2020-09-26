@@ -56,5 +56,7 @@
   {%- if theme.pjax %}
     </div>
   {%- endif %}
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/particle.js"></script>
 </body>
 </html>
