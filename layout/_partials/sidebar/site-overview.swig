@@ -56,6 +56,23 @@
         {%- if hasTagsPage %}</a>{%- endif %}
       </div>
     {%- endif %}
+
+    {%- if site.albums.length > 0 %}
+      {%- set albumsPageQuery = site.pages.find({type: 'albums'}, {lean: true}) %}
+      {%- set hasAlbumsPage = albumPageQuery.length > 0 %}
+      <div class="site-state-item site-state-albums">
+        {%- if hasAlbumsPage %}
+          {%- if theme.menu.albums %}
+            <a href="{{ url_for(theme.menu.albums.split('||')[0] | trim) }}">
+          {% else %}
+            <a href="{{ url_for(config.albums_dir) + '/' }}">
+          {%- endif %}
+        {%- endif %}
+        <span class="site-state-item-count">{{ site.albums.length }}</span>
+        <span class="site-state-item-name">{{ __('state.albums') }}</span>
+        {%- if hasAlbumsPage %}</a>{%- endif %}
+      </div>
+    {%- endif %}
   </nav>
 </div>
 {%- endif %}
