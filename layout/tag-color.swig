@@ -2,8 +2,8 @@
      var alltags = document.getElementsByClassName('tag-cloud-tags');
      var tags = alltags[0].getElementsByTagName('a');
      for (var i = tags.length - 1; i >= 0; i--) {
-       var r=Math.floor(Math.random()*75+130);
-       var g=Math.floor(Math.random()*75+100);
+       var r=Math.floor(Math.random()*75+180);
+       var g=Math.floor(Math.random()*75+150);
        var b=Math.floor(Math.random()*75+80);
        tags[i].style.background = "rgb("+r+","+g+","+b+")";
      }
@@ -22,9 +22,9 @@
     padding-left: 5px;
     margin: 8px 5px 0px 0px;
   }
-  .tag-cloud-tags a:before{
+  /* .tag-cloud-tags a:before{
     content: "?";
-  }
+  } */
 
   .tag-cloud-tags a:hover{
      box-shadow: 0px 5px 15px 0px rgba(0,0,0,.4);
